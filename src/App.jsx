@@ -20,7 +20,13 @@ export function App() {
             .filter(n => !isNaN(n) && n !== "")
             .map(n => parseFloat(n))
         
-        listaDeNumeros.sort()
+        listaDeNumeros.sort((a, b)=>{
+            return a > b 
+                ? 1
+                : b > a
+                    ? -1
+                    : 0
+        })
 
         let suma = 0
         let repeticiones = {}
