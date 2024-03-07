@@ -18,6 +18,7 @@ export function App() {
             .replaceAll(" ", "")
             .split(",")
             .filter(n => !isNaN(n) && n !== "")
+            .map(n => parseFloat(n))
         
         listaDeNumeros.sort()
 
@@ -26,9 +27,10 @@ export function App() {
         const listLength = listaDeNumeros.length
 
         listaDeNumeros.forEach(n => {
-            suma += parseFloat(n)
-            repeticiones[n] = repeticiones[n] ? repeticiones[n] + 1 : 1
+            suma += n
+            repeticiones[n.toString()] = repeticiones[n.toString()] ? repeticiones[n.toString()] + 1 : 1
         });
+
         const maxRepeticiones = Math.max(...Object.values(repeticiones))
 
         setResultados({
