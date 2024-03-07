@@ -41,15 +41,17 @@ export function App() {
     }
 
     return <main>
-        <h1>Calculadora de media, moda y mediana</h1>
-        <form onSubmit={handleSubmit}>
+        <h1 style={{marginBottom: "0px"}}>Calculadora de media, moda y mediana</h1>
+        <p style={{marginTop: "0"}}>by Marty B.</p>
+        
+        <section><form onSubmit={handleSubmit}>
             <label>
                 <span>Introduce la lista de números separados por comas:</span>
                 <br />
                 <textarea placeholder="lista de números..." ref={inputRef} />
             </label>
             <button type="submit">Calcular</button>
-        </form>
+        </form></section>
         <section>
             {resultados.media !== undefined && <>
                 <h2>Resultados</h2>
